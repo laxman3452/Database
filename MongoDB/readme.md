@@ -81,7 +81,7 @@ e.g:-
 updateOne({name:"hari"},{$set :{isActive:true}})
 updateMany({name:"hari"},{$set:{isActive:true}})
 
-<!-- Here $set is a atomic operator -->
+Here $set is a atomic operator
 
 
 **Delete Operations in MongoDB**
@@ -102,9 +102,9 @@ find({count : {$gt:1}}).pretty()
 use updateOne,updateMany instead of update
 
 updateOne({name:"hari"},{courseCount:2}) 
-<!-- Doesn't runs without $set atomic operator. -->
+Doesn't runs without $set atomic operator.
 update({name:"hari"},{courseCount:2})
-<!-- Runs but deletes all pre-stored fields and adds only courseCount in this collection. -->
+Runs but deletes all pre-stored fields and adds only courseCount in this collection.
 
 **Getting more data in MongoDB**
 insertMany([{},{},....])
@@ -120,7 +120,7 @@ We don't fetch entire database at once. It's better to filter out or receive les
 
 **Save Bandwith while querying in MongoDB**
 find({},{name:1,_id:0,salary:0})
-<!-- Only outputs the email only -->
+Only outputs the email only
 find({},{name:1,_id:0,salary:0}).toArray()
 
 find({filter},{name:1,_id:0,salary:0}).forEach(()=>{})
@@ -139,17 +139,17 @@ find({filter},{name:1,_id:0,salary:0}).forEach(()=>{})
     }
 }
 find({profilePic.small:"250px"})
-<!-- Use Multiple . to get inside more -->
+Use Multiple . to get inside more
 
 
 **Understanding Arrays in MongoDB**
 updateOne({_id:""},{$set : {"login":["sunday","Tuesday","Friday"]}})
 
 find({_id:""}).login 
-<!-- invalid because we can't show for multiple collections -->
+invalid because we can't show for multiple collections
 
 findOne({_id:""}).login 
-<!-- Works -->
+Works
 
 
 **Database Modeling**
