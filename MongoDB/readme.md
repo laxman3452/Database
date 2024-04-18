@@ -5,6 +5,16 @@
 -> MongoDB is a NoSQL DBMS which is used to store data in json like format.
 
 
+ **MySQL and MongoDB differences**
+ Database    Database
+ Document    Table
+ Entity      Collection
+ index       index
+ _id field   Primary Key
+ Field       Column
+ Embedding   Join
+ Aggregation GROUP BY
+
 **imp**
 --MongoDB doesn't supports transaction and ACID principals i.e there is no consistency of data in NoSQL.
 --SQL supports transaction and ACID principals and there is consistency and integrity of data in a database.
@@ -17,6 +27,7 @@
 
 **imp**
 Biggest flexibility of mongoDB over Mysql is that we can add extra field for any collection in mongoDB but in SQL, we need to redesign the whole table structure and tables also if needed.
+
 
 
 
@@ -139,3 +150,14 @@ find({_id:""}).login
 
 findOne({_id:""}).login 
 <!-- Works -->
+
+
+**Database Modeling**
+ cosider ebook 
+ --Database Design for mere mortals
+
+ **Relations in mongoDB**
+ one-one
+ one-many
+ many-many
+
