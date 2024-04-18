@@ -81,3 +81,61 @@ deleteMany({filter},options)
 e.g:-
 deleteOne({name:"hari"})
 deleteMany({}) //Deletes all
+
+
+**Find Operations**
+find({count : {$gt:1}}).pretty()
+
+
+**DAtabase issues with update in MongoDB**
+use updateOne,updateMany instead of update
+
+updateOne({name:"hari"},{courseCount:2}) 
+<!-- Doesn't runs without $set atomic operator. -->
+update({name:"hari"},{courseCount:2})
+<!-- Runs but deletes all pre-stored fields and adds only courseCount in this collection. -->
+
+**Getting more data in MongoDB**
+insertMany([{},{},....])
+
+find().pretty()
+Type it for more.
+
+find().forEach((item) => {
+    if(item.name === "hari") printjson(item)
+})
+
+We don't fetch entire database at once. It's better to filter out or receive less data from the databsase.
+
+**Save Bandwith while querying in MongoDB**
+find({},{name:1,_id:0,salary:0})
+<!-- Only outputs the email only -->
+find({},{name:1,_id:0,salary:0}).toArray()
+
+find({filter},{name:1,_id:0,salary:0}).forEach(()=>{})
+
+
+
+**Understanding Objects structure in MongoDB**
+
+{
+    "_id":"",
+    "name":"ok",
+    "profilePic":{
+        "small":"250px",
+        "medium":"350px",
+        "large":"450px"
+    }
+}
+find({profilePic.small:"250px"})
+<!-- Use Multiple . to get inside more -->
+
+
+**Understanding Arrays in MongoDB**
+updateOne({_id:""},{$set : {"login":["sunday","Tuesday","Friday"]}})
+
+find({_id:""}).login 
+<!-- invalid because we can't show for multiple collections -->
+
+findOne({_id:""}).login 
+<!-- Works -->
