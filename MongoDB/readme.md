@@ -27,8 +27,8 @@ Admin
 
 
 **Create Operation in MongoDB**
-insertOne({data},{options})
-insertMany([{data},{data}],{options})
+insertOne({data},options)
+insertMany([{data},{data}],options)
 
 e.g
 insertOne({
@@ -46,3 +46,38 @@ insertMany([
     "salary":"$2000"
     }
 ])
+
+
+
+**Read Operations in MongoDB**
+
+findOne({filter},options)
+findMany({filter},options)
+
+
+e.g:- 
+findOne({name:"hari})
+findMany({salary: "$1000"})
+
+
+**Update Operations in MongoDB**
+
+updateOne({filter},{data},options)
+updateMany({filter},{data},options)
+
+e.g:-
+
+updateOne({name:"hari"},{$set :{isActive:true}})
+updateMany({name:"hari"},{$set:{isActive:true}})
+
+<!-- Here $set is a atomic operator -->
+
+
+**Delete Operations in MongoDB**
+
+deleteOne({filter},options)
+deleteMany({filter},options)
+
+e.g:-
+deleteOne({name:"hari"})
+deleteMany({}) //Deletes all
